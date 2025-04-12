@@ -6,9 +6,6 @@ import Players from "../Components/Players";
 import useChooseBetween from "../Hooks/ChoooseBetween";
 import { useNavigate } from "react-router-dom";
 
-
-
-
 export default function Home() {
   const [theme, setTheme] = React.useState("Numbers");
   const numbers = React.useRef(null);
@@ -49,7 +46,7 @@ export default function Home() {
   const changeGrid = useChooseBetween(grid, setGrid, "4x4", "6x6", four, six);
 
   return (
-    <div className="bg-darkest flex items-center justify-evenly flex-col h-screen w-screen">
+    <div className="bg-gray-900 flex items-center justify-evenly flex-col h-screen w-screen">
       
       <div className="flex flex-col content-evenly w-full">
         <Logo />
@@ -57,7 +54,7 @@ export default function Home() {
           
         </div>
       </div>
-      <div className="w-11/12 max-w-2xl bg-darkwhite rounded-3xl p-4 md:p-10 relative">
+      <div className="w-11/12 max-w-2xl bg-gray-100 rounded-3xl p-4 md:p-10 relative">
         <div>
           <Label text="Select Theme" />
           <div className="flex justify-between mt-3 md:mt-4">
@@ -85,7 +82,7 @@ export default function Home() {
           onClick={() => {
             navigate(`/${theme}/${players}/${grid}/0`);
           }}
-          className="flex items-center justify-center bg-orange text-darkwhite font-bold text-lg md:text-5x w-full h-12 md:h-16 mt-8 rounded-3xl hover:bg-lightorange cursor-pointer"
+          className="flex items-center justify-center bg-orange-600 text-gray-100 font-bold text-lg md:text-5xl w-full h-12 md:h-16 mt-8 rounded-3xl hover:bg-orange-400 cursor-pointer"
         >
           Start Game
         </button>

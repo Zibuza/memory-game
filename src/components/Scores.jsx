@@ -41,14 +41,7 @@ export default function Scores({ players, points, moves, turn, finish, setT, gri
         setSeconds((prev) => (prev === 59 ? 0 : prev + 1));
       }, 1000);
       return () => clearInterval(sec);
-    } else {
-      if (!res) {
-        setSeconds((prev) => prev - 1);
-        setRes(true);
-        if (localStorage.getItem(REACT_APP_TOKEN || "") !== null) {
-          addData();
-        }
-      }
+    
     }
   }, [seconds]);
 
